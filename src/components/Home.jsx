@@ -1,6 +1,19 @@
-// import Proyectos from "./Proyectos";
-
 export default function Home() {
+    const navMain = [
+        {
+            titulo: 'Feed',
+        },
+        {
+            titulo: 'Sobre mi',
+        },
+        {
+            titulo: 'Portfolio',
+        },
+        {
+            titulo: 'Contacto',
+        },
+    ]
+
     return (
         <div className="min-h-screen bg-gray-900 text-gray-400 font-sans">
             <div className="container mx-auto w-4/5 xl:w-3/5 flex flex-col lg:flex-row lg:gap-6 xl:gap-4">
@@ -30,18 +43,13 @@ export default function Home() {
                     </ul>
                 </header>
                 <main className="lg:w-3/5 lg:py-24 h-full">
-                    <div className="flex flex-col gap-2 mb-24">
-                        <p className="lg:hidden font-semibold text-xl">About</p>
-                        <p>Back in 2012, I decided to try my hand at creating custom Tumblr themes and tumbled head first into the rabbit hole of coding and web development. Fast-forward to today, and Ive had the privilege of building software for an advertising agency, a start-up, a student-led design studio, and a huge corporation.</p>
-                        <p>My main focus these days is building products and leading projects for our clients at Upstatement. In my free time Ive also released an online video course that covers everything you need to know to build a web app with the Spotify API.</p>
-                    </div>
-                    {/* <div className="flex flex-col gap-4 ">
-                        <header className="text-slate-200">
-                            <p className="w-2/3 text-left text-2xl font-semibold">Algunos proyectos en los que he trabajado recientemente</p>
-                            <p className="text-md font-normal">Ver todos</p>
-                        </header>
-                        <Proyectos />
-                    </div> */}
+                    <ul className="max-w-full overflow-auto grid grid-flow-col auto-cols-[1fr] items-center">
+                        {navMain.map(e => (
+                            <li className="hover:bg-gray-800 grid place-items-center font-semibold text-gray-200 border-y-4 border-transparent hover:border-b-sky-500" key={e.titulo}>
+                                <a className='w-full h-full py-4 text-center' href="#">{e.titulo}</a>
+                            </li>
+                        ))}
+                    </ul>
                 </main>
             </div>
         </div>
