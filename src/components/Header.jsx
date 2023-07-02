@@ -37,6 +37,7 @@ export default function Header() {
             </li>
           ))}
         </ul>
+        <p className='text-xs text-gray-600 font-semibold'>Copyright © 2023 Ciclo. Hecho con ❤️ desde Argentina.</p>
     </header>
   )
 }
