@@ -20,23 +20,23 @@ export default function Portfolio() {
     <table className="w-full table-auto border-collapse text-left mt-4">
         <thead className="dark:text-gray-100 bg-gray-200 dark:bg-gray-900 sticky top-0 border-b border-gray-600/20 dark:border-gray-200/10">
             <tr>
-                <th className="py-4 pr-4">Año</th>
-                <th className="py-4 pr-4">Proyecto</th>
-                <th className="py-4 pr-4">Categoría</th>
-                <th className="py-4 pr-4">Hecho con</th>
-                <th className="py-4 pr-4">Link</th>
+                <th className="py-4 pr-3 hidden md:table-cell">Año</th>
+                <th className="py-4 pr-3">Proyecto</th>
+                <th className="py-4 pr-3 hidden md:table-cell">Categoría</th>
+                <th className="py-4 pr-3 hidden lg:table-cell">Hecho con</th>
+                <th className="py-4 pr-3">Link</th>
             </tr>
         </thead>
         <tbody>
             {proyectos.map(proyecto => (
             <tr className="border-b border-gray-600/20 last:border-none dark:border-gray-200/10" key={proyecto.nombre}>
-                <td className="py-4 pr-4">{proyecto.año}</td>
-                <td className="py-4 pr-4 font-semibold">{proyecto.nombre}</td>
-                <td className="py-4 pr-4">{proyecto.categoria}</td>
-                <td className="py-4 pr-4">{proyecto.herramientas.map((e) => (
+                <td className="py-4 pr-3 hidden md:table-cell">{proyecto.año}</td>
+                <td className="py-4 pr-3 font-semibold">{proyecto.nombre}</td>
+                <td className="py-4 pr-3 hidden md:table-cell">{proyecto.categoria}</td>
+                <td className="py-4 pr-3 hidden lg:table-cell">{proyecto.herramientas.map((e) => (
                     <p key={e}>{e}</p>
                 ))}</td>
-                <td className="py-4 pr-4">
+                <td className="py-4 pr-3">
                     <LinkRouter to={proyecto.link} target='_blank' className="hover:bg-gray-100/50 dark:hover:bg-gray-800 rounded-md w-10 h-10 grid place-items-center">
                         <FontAwesomeIcon icon={faLink}/>
                     </LinkRouter>
