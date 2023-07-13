@@ -17,7 +17,7 @@ export default function Nav() {
                     return (
                         'font-semibold border-transparent border-y-4 w-full h-full py-4 text-center ' +
                         (!isActive
-                        ? 'dark:text-gray-400'
+                        ? 'dark:text-gray-400 text-gray-500'
                         : 'border-b-sky-500 text-gray-600 dark:text-gray-200')
                     )
                 }}>
